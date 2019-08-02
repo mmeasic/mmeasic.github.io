@@ -1,2 +1,14 @@
+# Site settings
+title: Mario Measic
+description: CV & Portfolio
+# baseurl: "" # the subpath of your site, e.g. /blog
+# url: "localhost:3000" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
+
+# User settings
+username: Mario Measic
+user_description: Striving to find problems and their solutions.
+user_title: Data Scientist/Engineer
+linkedin_username: mariomeasicgavran
+
 # Build settings
 remote_theme: mmeasic/jekyll-theme-minimal-resume
