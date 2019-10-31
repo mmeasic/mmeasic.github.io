@@ -5,6 +5,17 @@ description: CV & Portfolio
 # User settings
 username: Mario Measic
 user_title: Data Scientist/Engineer
+email: mario.measic.gavran@gmail.com
+
+# Social networks
+linkedin_username: mariomeasicgavran
+instagram_username: mmeasic42
+github_username: mmeasic
+
+# Google-analytics
+google_analytics: UA-151165575-1
 
 # Build settings
 remote_theme: mmeasic/jekyll-theme-minimal-resume
+
+exclude: ['package.json', 'src' , 'node_modules']
