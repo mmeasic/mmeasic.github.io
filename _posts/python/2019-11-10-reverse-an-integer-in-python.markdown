@@ -2,7 +2,7 @@
 layout: post
 category: python
 date: 2019-11-10
-title: Reverse a natural number (positive integer) in Python
+title: Reverse a number (positive integer) in Python
 image: /assets/python-wide.png
 permalink: /python/reverse-an-integer-in-python
 redirect_from: /reverse-an-integer-in-python
