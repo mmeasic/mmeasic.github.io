@@ -10,7 +10,7 @@ $spacing-unit: 20px;
 // Colours
 $grey: #444;
 $salmon: #fa8072;
-$light-salmon: lighten($salmon, 30%);
+$salmon-light: lighten($salmon, 30%);
 $grey-light: lighten($grey, 30%);
 $grey-dark: darken($grey, 25%);
 $yellow-light: lighten(yellow, 40%);
@@ -80,7 +80,6 @@ header {
 
 /* Basic styling */
 body {
-    background-color: $light-salmon;
     -webkit-text-size-adjust: 100%;
     -webkit-font-feature-settings: "kern" 1;
     -moz-font-feature-settings: "kern" 1;
@@ -88,6 +87,7 @@ body {
     font-feature-settings: "kern" 1;
     font-kerning: normal;
     font-size: 16px;
+    background-color: $salmon-light;
 }
 
 ::-webkit-scrollbar              { padding-top: $spacing-unit; background-color: #fff; height: 5px;}
