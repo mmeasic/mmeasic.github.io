@@ -32,7 +32,7 @@ def reverse_int(i: int) -> int:
 
 The function will cast the number to a string. Then, you can use slice notation to reverse a number.
 
-Now, the challenge is to reverse a number only using arithmetic.
+Now, the challenge is to reverse a number using only arithmetic.
 
 ## Using arithmetic and modulo operation
 
