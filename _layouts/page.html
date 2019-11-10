@@ -1,0 +1,29 @@
+---
+layout: all
+---
+<header>
+
+    <a href="/"><h1 class="post-title">Mario Measic-Gavran</h1></a>
+
+    <p>
+        Data Sci/Eng at Strands Labs. Find me on
+            <a href="https://instagram.com/bbmelb">IG</a>,
+            <a href="https://github.com/mmeasic">GitHub</a>, or
+            <a href="mailto:mario.measic.gavran@gmail.com">email</a>.
+    </p>
+
+    <p style="font-size: smaller">
+        Filter by
+        <a href="/">All</a> ({{ site.posts |size }}),
+        <a href="/python/">Python</a> ({{ site.categories.python |size }}),
+        <a href="/oracle/">Oracle</a> ({{ site.categories.oracle |size }}),
+        <a href="/airflow/">Airflow</a> ({{ site.categories.airflow |size }})
+    </p>
+
+</header>
+
+<article class="post">
+    <div class="post-content">
+        {{ content }}
+    </div>
+</article>
