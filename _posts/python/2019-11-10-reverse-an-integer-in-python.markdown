@@ -47,7 +47,7 @@ def reverse_int(i: int) -> int:
 54321
 ```
 
-## Previous with recursion
+## Previous solution, with recursion
 
 ```python
 def reverse_int(i: int, r: int = 0) -> int:
@@ -68,5 +68,9 @@ def reverse_int(i: int, r: int = 0) -> int:
 That's it. If you are not familiar with the type hints, we will welcome you
 on this [dark side][1]. For the next time, we will include running times for the
 problem we are solving, we don't want to break the Internet for the first post.
+
+## Song of the Week
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7G1Cv5WuX-c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [1]: https://docs.python.org/3/library/typing.html
