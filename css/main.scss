@@ -9,6 +9,8 @@ $spacing-unit: 20px;
 
 // Colours
 $grey: #444;
+$salmon: #fa8072;
+$light-salmon: lighten($salmon, 30%);
 $grey-light: lighten($grey, 30%);
 $grey-dark: darken($grey, 25%);
 $yellow-light: lighten(yellow, 40%);
@@ -78,7 +80,7 @@ header {
 
 /* Basic styling */
 body {
-    background-color: white;
+    background-color: $light-salmon;
     -webkit-text-size-adjust: 100%;
     -webkit-font-feature-settings: "kern" 1;
     -moz-font-feature-settings: "kern" 1;
@@ -98,7 +100,7 @@ body {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Merriweather', 'Garamond', 'Georgia', 'serif';
+    font-family: 'Open Sans', 'Garamond', 'Georgia', 'serif';
     font-weight: normal;
     color: #444;
 }
