@@ -10,7 +10,6 @@ $spacing-unit: 20px;
 // Colours
 $grey: #444;
 $salmon: #fa8072;
-$salmon-light: lighten($salmon, 30%);
 $grey-light: lighten($grey, 30%);
 $grey-dark: darken($grey, 25%);
 $yellow-light: lighten(yellow, 40%);
@@ -87,7 +86,7 @@ body {
     font-feature-settings: "kern" 1;
     font-kerning: normal;
     font-size: 16px;
-    background-color: $salmon-light;
+    background-color: $salmon;
 }
 
 ::-webkit-scrollbar              { padding-top: $spacing-unit; background-color: #fff; height: 5px;}
