@@ -30,6 +30,10 @@ def reverse_int(i: int) -> int:
 54321
 ```
 
+The function will cast the number to a string. Then, you can use slice notation to reverse a number.
+
+Now, the challenge is to reverse a number only using arithmetic.
+
 ## Using arithmetic and modulo operation
 
 ```python
@@ -46,6 +50,10 @@ def reverse_int(i: int) -> int:
 >>> reverse_int(12345)
 54321
 ```
+
+So, the catch here is that we initialize the variable `r` that we will return 
+with the 0 as an initial value. Then, as long as the `i` is greater than 0,
+expand `r` by a digit (position) and add to it the value of the last digit of `i`. Then, do the integer divison (division followed by a floor function) on `i`. Return `r`.
 
 ## Previous solution, with recursion
 
