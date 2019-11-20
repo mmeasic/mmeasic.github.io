@@ -57,14 +57,9 @@ I provide an excerpt for how to define Connection object that will later be used
 from os import getenv
 
 from airflow.models import Connection
+from airflow.models import Variable
 from airflow.utils.db import merge_conn
-
-extra = f"{{"
-extra += f""""dsn": "{getenv('RDBMS_HOST')}",
-         "service_name": "{getenv('RDBMS_SERVICE_NAME')}",
-         "sid": "{getenv('RDBMS_SERVICE_NAME')}",
-         "jdbc_url": "jdbc:oracle:thin:@{getenv('RDBMS_HOST')}:{getenv('RDBMS_PORT')}/{getenv('RDBMS_SERVICE_NAME')}"""
-extra += "}}"
+from dotenv import load_dotenv
 
 # Oracle RDBMS Connection
 merge_conn(
@@ -76,12 +71,15 @@ merge_conn(
         login=getenv('RDBMS_USER'),
         password=getenv('RDBMS_PWD'),
         port=getenv('RDBMS_PORT'),
-        extra=extra
+        {% raw %}
+        extra=f"""{{"dsn": "{getenv('RDBMS_HOST')}",
+                    "service_name": "{getenv('RDBMS_SERVICE_NAME')}",
+                    "sid": "{getenv('RDBMS_SERVICE_NAME')}",
+                    "jdbc_url": "jdbc:oracle:thin:@{getenv('RDBMS_HOST')}:{getenv('RDBMS_PORT')}/{getenv('RDBMS_SERVICE_NAME')}"}}"""
+        {% endraw %}
         )
     )
 ```
-
-The ridiculous extra assignments is due to Markdown's inability to parse the code.
 
 Here, I provide the example for the Oracle database since that’s the one I’m using in my day-to-day activities. You can adjust it to the RDBMS of your choice following the link provided above.
 
