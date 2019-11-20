@@ -71,10 +71,12 @@ merge_conn(
         login=getenv('RDBMS_USER'),
         password=getenv('RDBMS_PWD'),
         port=getenv('RDBMS_PORT'),
-        extra=f"""{{"dsn": "{getenv('RDBMS_HOST')}",
+        extra=f"""{{
+                    "dsn": "{getenv('RDBMS_HOST')}",
                     "service_name": "{getenv('RDBMS_SERVICE_NAME')}",
                     "sid": "{getenv('RDBMS_SERVICE_NAME')}",
-                    "jdbc_url": "jdbc:oracle:thin:@{getenv('RDBMS_HOST')}:{getenv('RDBMS_PORT')}/{getenv('RDBMS_SERVICE_NAME')}"}}"""
+                    "jdbc_url": "jdbc:oracle:thin:@{getenv('RDBMS_HOST')}:{getenv('RDBMS_PORT')}/{getenv('RDBMS_SERVICE_NAME')}"
+                    }}"""
         )
     )
 ```
