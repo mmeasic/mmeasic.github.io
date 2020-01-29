@@ -225,7 +225,7 @@ Creating a Connection record:
 # WebHDFS Connection
 merge_conn(
     Connection(
-        conn_id=f'hdfs_{Variable.get('FM_PROJECT')}',
+        conn_id=f'{Variable.get('FM_PROJECT')}',
         conn_type='HDFS',
         host='hw.nouslabs.com',
         port=50070
