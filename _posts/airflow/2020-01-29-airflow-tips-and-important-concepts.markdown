@@ -14,9 +14,11 @@ redirect_from: /airflow-tips-concepts
 
 # Introduction
 
-I recently had a session with my colleagues at Strands Labs where we have went through our DAGs and pinpointed key constructs we are using. Note that we are currently not running Airflow in a distributed manner. That should change in the future due to the company's involvement in developing a proprietary AI Cloud Platform.
+I recently had a session with my colleagues at Strands Labs where we have went through our DAGs and pinpointed key constructs we are using. 
 
-Despite majority of the stuff I have written is available online, especially through an incredibly-well organized and concise Airflow documentation, I am sharing what we have pointed out as very important.
+Please note that we are, currently, not running Airflow in a distributed manner. That should change in the future due to the company's involvement in developing a proprietary AI Cloud Platform.
+
+Despite majority of the stuff I have written is available online, especially through an incredibly-well organized and concise Airflow documentation, I am sharing what we found useful.
 
 ## Requirements
 
@@ -30,7 +32,7 @@ pip install pandas
 
 So, let's start!
 
-### Using DAG inside of a Context Manager
+## Using DAG inside of a Context Manager
 
 We will use DAG inside of a Context Manager to avoid assigning task to the DAG, in every creation of a TaskInstance.
 
@@ -73,7 +75,7 @@ Why you should use a Context Manager?
 *  Automatically assign new TaskInstances to the DAG
 *  Avoid repeating `dag=dag` in each call to the TaskInstance constructor
 
-### Use default arguments when instatiating DAG
+## Use default arguments when instatiating DAG
 
 `default_args` parameter in the DAG constructor receives a dictionary that will be used by all the TaskInstances, instead of passing same set of parameters to different TaskInstances.
 
@@ -103,7 +105,7 @@ with DAG(dag_id=DAG_ID,
 Why you should use a `default_args`?
 *  Avoid repeating common parameters/arguments in each call to the TaskInstance constructor
 
-### Variables
+## Variables
 
 Airflow provides you with the notion of `Variable`, essentially a key-value store inside the Airflow "metabase"
 
@@ -111,7 +113,7 @@ Airflow provides you with the notion of `Variable`, essentially a key-value stor
 from airflow.models import Variable
 ```
 
-#### Creating a Variable record
+### Creating a Variable record
 
 
 ```python
@@ -128,7 +130,7 @@ for key, value in VARIABLES.items():
     [2020-01-23 14:24:06,821] {__init__.py:183} WARNING - empty cryptography key - values will not be stored encrypted.
 
 
-#### How it looks in the Airflow metabase?
+### How it looks in the Airflow metabase?
 
 ```python
 import psycopg2 as pg
@@ -181,7 +183,7 @@ df.head()
 </table>
 </div>
 
-#### Referencing a Variable record
+### Referencing a Variable record
 
 ```python
 random_var = Variable.get('RANDOM_VAR')
@@ -193,11 +195,11 @@ print(random_var)
 Why you should use a `Variable`?
 *  Avoid having configuration file or saving key-value pairs in the environment variables
 
-#### Treat with caution
+### Treat with caution
 
 Each call to the class method `Variable.get_value()` or `Variable.get()` is a call to the DB (open a session, make call), therefore, one potential usage would be to call it just once in the `default_args` dictionary and reuse it everywhere when needed.
 
-### Connections
+## Connections
 
 In order to reduce defining connections in the code, Airflow provides you with the `Connection` element, where you can define various objects to different datastores
 
@@ -206,7 +208,7 @@ from airflow.models import Connection
 from airflow.utils.db import merge_conn
 ```
 
-#### Creating a Connection record
+### Creating a Connection record
 
 ```python
 # WebHDFS Connection
@@ -220,7 +222,7 @@ merge_conn(
     )
 ```
 
-#### How it looks in the Airflow metabase?
+### How it looks in the Airflow metabase?
 
 ```python
 df = pd.read_sql("SELECT * FROM connection WHERE conn_id = 'hdfs_moneyhb_adm'", conn)
@@ -279,7 +281,7 @@ df.head()
 
 
 
-#### How to use it?
+### How to use it?
 
 Most of the `hooks` have the parameter `{hook_name}_conn_id` where you provide the connection.
 
@@ -300,9 +302,7 @@ hook.check_for_path('/warehouse/tablespace/external/hive/')
 
     True
 
-
-
-### Create things dynamically
+## Create things dynamically
 
 Use Python control flow statements to reduce development time.
 
@@ -353,7 +353,7 @@ Why you should use Python control flow statements?
 *  Reduce development time
 *  Increase productivity and readability
 
-### Trigger other DAGs
+## Trigger other DAGs
 
 We can trigger other DAGs and pass some data to them, a useful concept when there are dependencies between different workflows (think about some).
 
@@ -394,11 +394,11 @@ I can think of various things that are useful, but I find this one quite useful.
 
 Example would be, you make predictions and would like to serve them, but through another workflow. You need to trigger that workflow.
 
-### The `context` dictionary
+## `context` dictionary
 
 Available through `PythonOperator` to your Python callables. Cue the usage in the example above, we pass the `params` dictionary in the `TriggerDagRunOperator` constructor and access it through `context` dictionary in the callable.
 
-### The `execution_date` mystery
+## `execution_date` mystery
 
 Airflow has a strict dependency on a specific time: `the execution_date`. 
 
