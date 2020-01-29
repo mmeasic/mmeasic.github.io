@@ -116,6 +116,9 @@ from airflow.models import Variable
 ### Creating a Variable record
 
 
+Use `Variable.set()` to create new records.
+
+
 ```python
 VARIABLES = {
     'FM_PROJECT': 'moneystrands',
@@ -131,6 +134,9 @@ for key, value in VARIABLES.items():
 
 
 ### How it looks in the Airflow metabase?
+
+
+We can check the values of the records in a database table `variable`.
 
 
 ```python
@@ -184,7 +190,11 @@ df.head()
 </table>
 </div>
 
+
 ### Referencing a Variable record
+
+
+Use `Variable.get()` to check the values of records.
 
 
 ```python
