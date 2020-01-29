@@ -113,8 +113,7 @@ Airflow provides you with the notion of `Variable`, essentially a key-value stor
 from airflow.models import Variable
 ```
 
-### Creating a Variable record
-
+Creating a Variable record:
 
 Use `Variable.set()` to create new records.
 
@@ -133,8 +132,7 @@ for key, value in VARIABLES.items():
     [2020-01-23 14:24:06,821] {__init__.py:183} WARNING - empty cryptography key - values will not be stored encrypted.
 
 
-### How it looks in the Airflow metabase?
-
+How it looks in the Airflow metabase?
 
 We can check the values of the records in a database table `variable`.
 
@@ -191,8 +189,7 @@ df.head()
 </div>
 
 
-### Referencing a Variable record
-
+Referencing a Variable record:
 
 Use `Variable.get()` to check the values of records.
 
@@ -208,9 +205,7 @@ Why you should use a `Variable`?
 *  Avoid having configuration file or saving key-value pairs in the environment variables
 
 
-### Treat with caution
-
-
+Caution?
 Each call to the class method `Variable.get_value()` or `Variable.get()` is a call to the DB (open a session, make call), therefore, one potential usage would be to call it just once in the `default_args` dictionary and reuse it everywhere when needed.
 
 
@@ -224,8 +219,7 @@ from airflow.models import Connection
 from airflow.utils.db import merge_conn
 ```
 
-### Creating a Connection record
-
+Creating a Connection record:
 
 ```python
 # WebHDFS Connection
@@ -239,8 +233,7 @@ merge_conn(
     )
 ```
 
-### How it looks in the Airflow metabase?
-
+How it looks in the Airflow metabase?
 
 ```python
 df = pd.read_sql("SELECT * FROM connection WHERE conn_id = 'hdfs_moneyhb_adm'", conn)
@@ -298,8 +291,7 @@ df.head()
 </div>
 
 
-### How to use it?
-
+How to use it?
 
 Most of the `hooks` have the parameter `{hook_name}_conn_id` where you provide the connection.
 
