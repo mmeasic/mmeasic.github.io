@@ -132,6 +132,7 @@ for key, value in VARIABLES.items():
 
 ### How it looks in the Airflow metabase?
 
+
 ```python
 import psycopg2 as pg
 import pandas as pd
@@ -185,6 +186,7 @@ df.head()
 
 ### Referencing a Variable record
 
+
 ```python
 random_var = Variable.get('RANDOM_VAR')
 print(random_var)
@@ -195,11 +197,15 @@ print(random_var)
 Why you should use a `Variable`?
 *  Avoid having configuration file or saving key-value pairs in the environment variables
 
+
 ### Treat with caution
+
 
 Each call to the class method `Variable.get_value()` or `Variable.get()` is a call to the DB (open a session, make call), therefore, one potential usage would be to call it just once in the `default_args` dictionary and reuse it everywhere when needed.
 
+
 ## Connections
+
 
 In order to reduce defining connections in the code, Airflow provides you with the `Connection` element, where you can define various objects to different datastores
 
@@ -209,6 +215,7 @@ from airflow.utils.db import merge_conn
 ```
 
 ### Creating a Connection record
+
 
 ```python
 # WebHDFS Connection
@@ -223,6 +230,7 @@ merge_conn(
 ```
 
 ### How it looks in the Airflow metabase?
+
 
 ```python
 df = pd.read_sql("SELECT * FROM connection WHERE conn_id = 'hdfs_moneyhb_adm'", conn)
@@ -280,8 +288,8 @@ df.head()
 </div>
 
 
-
 ### How to use it?
+
 
 Most of the `hooks` have the parameter `{hook_name}_conn_id` where you provide the connection.
 
@@ -302,7 +310,9 @@ hook.check_for_path('/warehouse/tablespace/external/hive/')
 
     True
 
+
 ## Create things dynamically
+
 
 Use Python control flow statements to reduce development time.
 
@@ -354,6 +364,7 @@ Why you should use Python control flow statements?
 *  Increase productivity and readability
 
 ## Trigger other DAGs
+
 
 We can trigger other DAGs and pass some data to them, a useful concept when there are dependencies between different workflows (think about some).
 
@@ -408,6 +419,6 @@ Additionally, the `execution_date` is not interpreted by Airflow as the start ti
 
 ## Song of the Week
 
-This post was dedicated to Kobe Bean Bryant, a childhood hero that tragically passed away on Sunday 26th of January 2020.
+This post was dedicated to Kobe Bean Bryant, my childhood hero that tragically passed away on Sunday 26th of January 2020.
 
 <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/750846412&color=%234838b8&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
