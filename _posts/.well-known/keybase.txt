@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/amigosi
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://mmeasic.github.io
+  * I am amigosi (https://keybase.io/amigosi) on keybase.
+  * I have a public key ASCIej2exSQzFHVlgL2x2r_nTvYE_TSqBmlxg12SBWjzBQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120887a3d9ec5243314756580bdb1dabfe74ef604fd34aa066971835d920568f3050a",
+      "host": "keybase.io",
+      "kid": "0120887a3d9ec5243314756580bdb1dabfe74ef604fd34aa066971835d920568f3050a",
+      "uid": "af02aeb486e9ed64c2e2163417367819",
+      "username": "amigosi"
+    },
+    "merkle_root": {
+      "ctime": 1587888589,
+      "hash": "d4e8a319b4eed954bbf66b8cbe5b25d7c3d0f8dab16b0709cea3d43d1df265e7020145e4115450be64e1bb01e24de416cf627660a33e1dd0dd4cf51147bcafb3",
+      "hash_meta": "ccee45dffa0a136481ecc7aec5716b36be58cf041bd7b4b2ae5638a706621504",
+      "seqno": 16056703
+    },
+    "service": {
+      "entropy": "07sxi/HBGiwuLIxtpsnEpQb8",
+      "hostname": "mmeasic.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.4.2"
+  },
+  "ctime": 1587888616,
+  "expire_in": 504576000,
+  "prev": "0823963f4229ae2e9ba5b26ab808b97034cdec06997317039eb0d318ee0b02a8",
+  "seqno": 19,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgiHo9nsUkMxR1ZYC9sdq/5072BP00qgZpcYNdkgVo8wUKp3BheWxvYWTESpcCE8QgCCOWP0Ipri6bpbJquAi5cDTN7AaZcxcDnrDTGO4LAqjEIPizLWpzLMA9Q3j71NaooP/g6RdYFqXZkZWmcP8KhzpIAgHCo3NpZ8RAAc3G5/lBV8UhUlskB51+waLv+euEG+x7ZRMSZ0Fh3LSGtKlYa6YerEg1+NxZ4K34tqPFZ03DJSpX60CAREP0BqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIMbcx/za73jlPpXI7OGiw7AEiQMk5kl6SUWmyU1Jrv7Po3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/amigosi
+
+==================================================================
